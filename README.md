@@ -1,5 +1,6 @@
 # Recipe book (Smart cookbook)
 ![](https://img.shields.io/github/languages/top/xiaoxiaobt/Recipe-book---Studio2)
+![](https://img.shields.io/github/license/xiaoxiaobt/Recipe-book---Studio2)
 
 This project is an implementation of Aalto Programming Studio 2 course, Smart cookbook
 Detailed description can be found in this link:
