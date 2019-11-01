@@ -37,6 +37,9 @@
     <path id="JUnit 3.libraryclasspath">
         <pathelement location="../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
     </path>
+    <path id="Scala Compiler container [ 2.12.3 ].libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.scala-lang.scala-compiler_2.12.3.v20170725-052526-VFINAL-6ac6da8.jar"/>
+    </path>
     <path id="RecipeBook.classpath">
         <path refid="Scala Library container [ 2.12.3 ].libraryclasspath"/>
         <path refid="JUnit 5.libraryclasspath"/>
@@ -44,11 +47,13 @@
         <pathelement location="scala-swing_2.12-2.0.1.jar"/>
         <path refid="JUnit 4.libraryclasspath"/>
         <path refid="JUnit 3.libraryclasspath"/>
+        <path refid="Scala Compiler container [ 2.12.3 ].libraryclasspath"/>
     </path>
     <path id="run.UnitTests.bootclasspath">
         <path refid="Scala Library container [ 2.12.3 ].libraryclasspath"/>
         <fileset dir="${java.home}/lib" includes="*.jar"/>
         <fileset dir="${java.home}/lib/ext" includes="*.jar"/>
+        <path refid="Scala Compiler container [ 2.12.3 ].libraryclasspath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
