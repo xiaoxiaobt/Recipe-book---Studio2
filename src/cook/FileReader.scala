@@ -1,4 +1,4 @@
-package src
+package cook
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source._
 import scala.util.control.Breaks._

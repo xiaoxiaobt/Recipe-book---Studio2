@@ -1,4 +1,4 @@
-package src
+package cook
 import collection.mutable._
 
 class Fridge {
