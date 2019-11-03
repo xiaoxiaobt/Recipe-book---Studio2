@@ -1,4 +1,3 @@
 language: scala
-script:
-  - gradle check
+install: ant deps
 
