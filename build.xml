@@ -55,10 +55,17 @@
         <fileset dir="${java.home}/lib/ext" includes="*.jar"/>
         <path refid="Scala Compiler container [ 2.12.3 ].libraryclasspath"/>
     </path>
+    <path id="run.UnitTests (1).bootclasspath">
+        <path refid="Scala Library container [ 2.12.3 ].libraryclasspath"/>
+        <fileset dir="${java.home}/lib" includes="*.jar"/>
+        <fileset dir="${java.home}/lib/ext" includes="*.jar"/>
+        <path refid="Scala Compiler container [ 2.12.3 ].libraryclasspath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -94,11 +101,23 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="src.UnitTests" todir="${junit.output.dir}"/>
+            <test name="cook.UnitTests" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="RecipeBook.classpath"/>
             <bootclasspath>
                 <path refid="run.UnitTests.bootclasspath"/>
+            </bootclasspath>
+        </junit>
+    </target>
+    <target name="UnitTests (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="tests.UnitTests" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="RecipeBook.classpath"/>
+            <bootclasspath>
+                <path refid="run.UnitTests (1).bootclasspath"/>
             </bootclasspath>
         </junit>
     </target>

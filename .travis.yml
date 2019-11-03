@@ -1,5 +1,6 @@
 language: scala
 jdk:
   - oraclejdk9
+install: ant deps
 script: ant build
 
